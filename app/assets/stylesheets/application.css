@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

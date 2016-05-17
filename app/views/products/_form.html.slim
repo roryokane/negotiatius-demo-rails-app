@@ -6,15 +6,19 @@
         - @product.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :url, "URL"
-    = f.text_field :url
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :manufacturer
-    = f.text_field :manufacturer
+  fieldset
+    legend Product identification
+    p Identify the product with either a URL or a name and manufacturer.
+    .field
+      = f.label :url, "URL"
+      = f.text_field :url
+    hr
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :manufacturer
+      = f.text_field :manufacturer
   .field
     = f.label :description
     = f.text_field :description
