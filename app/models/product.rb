@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  belongs_to :user
+
   validates_with ActiveModel::Validations::ProductIdentifierPresenceValidator
   validates :description, length: { maximum: 200 }
   validates :quantity, numericality: { only_integer: true, greater_than: 0}
