@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :user
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
 
   validates_with ActiveModel::Validations::ProductIdentifierPresenceValidator
   validates :description, length: { maximum: 200 }
