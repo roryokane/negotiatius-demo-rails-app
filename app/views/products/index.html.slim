@@ -7,6 +7,8 @@ p Previously purchased products.
     = render partial: 'product_id_and_description', locals: {product: product}
     = render partial: 'products/product_price', locals: {product: product}
     p
+      | You ordered #{product.total_amount_ordered} of these in the past.
+    p
       = link_to 'Show', product
       '  |
       = link_to 'Edit', edit_product_path(product)
