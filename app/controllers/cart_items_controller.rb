@@ -4,6 +4,7 @@ class CartItemsController < ApplicationController
   def new
     @product = Product.new
     @cart_item = CartItem.new
+    @cart_item.quantity = 1
   end
 
   def create

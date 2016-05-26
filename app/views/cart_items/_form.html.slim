@@ -19,23 +19,29 @@
       p Identify the product with either a URL or a name and manufacturer.
       .field
         = product_form.label :url, "URL"
+        '
         = product_form.text_field :url
       hr
       .field
         = product_form.label :name
+        '
         = product_form.text_field :name
       .field
         = product_form.label :manufacturer
+        '
         = product_form.text_field :manufacturer
     .field
       = product_form.label :description
+      '
       = product_form.text_field :description
 
     .field
       = f.label :quantity
+      '
       = f.number_field :quantity
 
     .field
       = product_form.label :current_paying_price
+      '
       = product_form.text_field :current_paying_price
     .actions = f.submit
