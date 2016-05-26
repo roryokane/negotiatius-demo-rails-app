@@ -1,0 +1,11 @@
+- if product.url.present?
+  h2
+    a(href=product.url) = product.url
+- else
+  h2
+    = product.name
+    '  manufactured by
+    = product.manufacturer
+- if product.description.present?
+  p
+    q = product.description

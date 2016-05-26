@@ -1,17 +1,7 @@
-.cart-item
-  - if cart_item.product.url.present?
-    h2
-      a(href=cart_item.product.url) = cart_item.product.url
-  - else
-    h2
-      = cart_item.product.name
-      '  manufactured by
-      = cart_item.product.manufacturer
-  - if cart_item.product.description.present?
-      p
-        q = cart_item.product.description
+.listed-item.cart-item
+  = render partial: 'products/product_id_and_description', locals: {product: cart_item.product}
   p
     ' Ordering
     b = cart_item.quantity
-    | , seeking a unit price discounted from $
-    b = cart_item.product.current_paying_price
+    ' , seeking a unit price discounted from
+    b = number_to_currency(cart_item.product.current_paying_price)

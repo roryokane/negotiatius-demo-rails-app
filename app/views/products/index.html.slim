@@ -1,31 +1,16 @@
-h1 Listing products
+h1 Inventory
 
-table
-  thead
-    tr
-      th URL
-      th Name
-      th Manufacturer
-      th Description
-      th Quantity
-      th Current paying price
-      th
-      th
-      th
-
-  tbody
-    - @products.each do |product|
-      tr
-        td = product.url
-        td = product.name
-        td = product.manufacturer
-        td = product.description
-        td = product.quantity
-        td = product.current_paying_price
-        td = link_to 'Show', product
-        td = link_to 'Edit', edit_product_path(product)
-        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
+- @products.each do |product|
+  .listed-item.product
+    = render partial: 'product_id_and_description', locals: {product: product}
+    = render partial: 'products/product_price', locals: {product: product}
+    p
+      = link_to 'Show', product
+      '  |
+      = link_to 'Edit', edit_product_path(product)
+      '  |
+      = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Product', new_product_path
+= link_to 'Add New Product', new_cart_item_path
