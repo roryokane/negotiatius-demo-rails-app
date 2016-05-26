@@ -1,4 +1,6 @@
 class CartItemsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @product = Product.new
     @cart_item = CartItem.new
