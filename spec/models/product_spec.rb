@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   describe "should require one identifier" do
     def new_product_without_identifiers
-      Product.new(quantity: 1, current_paying_price: 10)
+      Product.new(current_paying_price: 10)
     end
 
     it "should be valid when just a URL is given" do

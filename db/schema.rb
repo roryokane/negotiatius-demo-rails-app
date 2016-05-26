@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 20160517170546) do
     t.integer  "user_id"
   end
 
-  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -55,5 +53,4 @@ ActiveRecord::Schema.define(version: 20160517170546) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "products", "users"
 end

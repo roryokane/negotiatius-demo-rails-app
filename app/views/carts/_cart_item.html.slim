@@ -1,0 +1,17 @@
+.cart-item
+  - if cart_item.product.url.present?
+    h2
+      a(href=cart_item.product.url) = cart_item.product.url
+  - else
+    h2
+      = cart_item.product.name
+      '  manufactured by
+      = cart_item.product.manufacturer
+  - if cart_item.product.description.present?
+      p
+        q = cart_item.product.description
+  p
+    b = cart_item.quantity
+    |  that you currently pay $
+    b = cart_item.product.current_paying_price
+    |  each for
