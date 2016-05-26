@@ -9,5 +9,6 @@ h1
 p
   = link_to 'Add New Product', new_cart_item_path
 
-p.check-out-button
-  = link_to 'Check Out', '/cart/check_out'
+- if @cart_items.any?
+  p.check-out-button
+    = link_to 'Check Out', '/cart/check_out', method: :post
