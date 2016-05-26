@@ -1,5 +1,7 @@
 h1 Inventory
 
+p Previously purchased products.
+
 - @products.each do |product|
   .listed-item.product
     = render partial: 'product_id_and_description', locals: {product: product}

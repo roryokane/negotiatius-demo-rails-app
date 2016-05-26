@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.where(user: current_user)
+    @products = Product.where(user: current_user).where('total_amount_ordered > 0')
   end
 
   # GET /products/1
