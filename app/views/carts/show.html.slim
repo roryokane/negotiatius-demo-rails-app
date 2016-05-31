@@ -11,4 +11,4 @@ p
 
 - if @cart_items.any?
   p.check-out-button
-    = link_to 'Check Out', '/cart/check_out', method: :post
+    = link_to 'Check Out', cart_check_out_path, method: :post
