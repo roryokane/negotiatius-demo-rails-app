@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @cart_item = CartItem.new
+    @cart_item.quantity = 1
   end
 
   # GET /products/1/edit
@@ -22,10 +24,11 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(product_params.merge({user: current_user}))
+    @cart_item = CartItem.new(cart_item_params.merge({product: @product}))
 
-    if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
+    if @product.valid? && @cart_item.valid? && @product.save && @cart_item.save
+      redirect_to cart_path, notice: 'Product added to cart.'
     else
       render :new
     end

@@ -1,12 +1,6 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @product = Product.new
-    @cart_item = CartItem.new
-    @cart_item.quantity = 1
-  end
-
   def create
     @product = Product.new(product_params.merge({user: current_user}))
     @cart_item = CartItem.new(cart_item_params.merge({product: @product}))
@@ -14,7 +8,8 @@ class CartItemsController < ApplicationController
     if @product.valid? && @cart_item.valid? && @product.save && @cart_item.save
       redirect_to cart_path, notice: 'Product added to cart.'
     else
-      render :new
+      flash[:error] = 'Error: invalid quantity.'
+      redirect_to products_path
     end
   end
 

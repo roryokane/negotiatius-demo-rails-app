@@ -7,7 +7,7 @@ h1
     = render partial: 'cart_item', locals: {cart_item: cart_item}
 
 p
-  = link_to 'Add New Product', new_cart_item_path
+  = link_to 'Add New Product', new_product_path
 
 - if @cart_items.any?
   p.check-out-button
