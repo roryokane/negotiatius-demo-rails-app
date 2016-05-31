@@ -34,7 +34,7 @@
     .field
       = f.label :quantity
       '
-      = f.number_field :quantity
+      = f.number_field :quantity, min: 1
 
     .field
       = product_form.label :current_paying_price

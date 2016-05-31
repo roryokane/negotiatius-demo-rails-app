@@ -6,8 +6,14 @@ p Previously purchased products.
   .listed-item.product
     = render partial: 'product_id_and_description', locals: {product: product}
     = render partial: 'products/product_price', locals: {product: product}
-    p
-      | You ordered #{product.total_amount_ordered} of these in the past.
+    = form_tag cart_items_path, method: :post do
+      p
+        ' #{product.total_amount_ordered} ordered so far.
+        ' Order more:
+        = number_field :cart_item, :quantity, min: 1, title: "Quantity", placeholder: "10"
+        '
+        = submit_tag "Add to Cart"
+        = hidden_field_tag 'product[id]', product.id
     p
       = link_to 'Show', product
       '  |

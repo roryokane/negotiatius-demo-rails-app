@@ -8,6 +8,8 @@ h1
 
 p
   = link_to 'Add New Product', new_product_path
+  '  |
+  = link_to 'Add Existing Product from Inventory', products_path
 
 - if @cart_items.any?
   p.check-out-button

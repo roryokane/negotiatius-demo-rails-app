@@ -8,4 +8,5 @@ class Product < ActiveRecord::Base
   validates :total_amount_ordered, numericality: { greater_than_or_equal_to: 0 }
 
   scope :shown_in_inventory, -> { where('total_amount_ordered > 0') }
+  scope :owned_by_user, ->(user) { where(user: user) }
 end
