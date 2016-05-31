@@ -55,8 +55,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def cart_item_params
+      params.require(:cart_item).permit(:quantity)
+    end
+
     def product_params
-      params.require(:product).permit(:url, :name, :manufacturer, :description, :quantity, :current_paying_price)
+      params.require(:product).permit(:url, :name, :manufacturer, :description, :current_paying_price)
     end
 end

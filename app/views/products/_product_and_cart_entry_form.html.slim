@@ -1,4 +1,4 @@
-= form_for @cart_item do |f|
+= form_for @cart_item, url: {controller: :products, action: :create} do |f|
 
   - if @cart_item.errors.any? || @product.errors.any?
     #error_explanation
