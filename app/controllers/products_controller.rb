@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @products = Product.where(user: current_user).shown_in_inventory
+    @products = Product.owned_by_user(current_user).shown_in_inventory
   end
 
   def new
