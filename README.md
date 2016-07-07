@@ -1,50 +1,15 @@
-Negotiatus Lite Demo
-================
+# Negotiatus Lite demo app
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This Ruby on Rails app demonstrates my competence with Rails, by reimplementing a small part of the website [Negotiatus](https://www.negotiatus.com/). Negotiatus is a business procurement web app where customers can enter products and request discounts to be negotiated for them. I implement the user system, creation of products, adding products to a cart, and viewing your inventory of previously-ordered products.
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.1
-- Rails 4.2.6
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
+You can view my live app at [Heroku](https://rory-negotiatus-lite.herokuapp.com/).
 
 Credits
 -------
 
+The initial version of the app was based on a template from `rails_app_composer`. The template provided support for users with Devise, a default page layout, and some default styles. I implemented everything else.
+
 License
 -------
+
+All my contributions to this app are licensed with the [Unlicense](http://unlicense.org/) (released into the public domain).
