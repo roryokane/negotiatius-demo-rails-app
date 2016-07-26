@@ -4,7 +4,7 @@ This Ruby on Rails app demonstrates my competence with Rails, by reimplementing 
 
 You can [play with my live app](https://rory-negotiatus-lite.herokuapp.com/) on Heroku.
 
-![screenshot of the Cart page with two products in the cart](screenshots/Cart_page_with_2_items.png)
+> ![screenshot of the Cart page with two products in the cart](screenshots/Cart_page_with_2_items.png)
 
 ## Notable Rails features I demonstrate use of
 
